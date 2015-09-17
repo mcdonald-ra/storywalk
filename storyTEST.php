@@ -17,7 +17,7 @@ var size=getSize();
 
 <?php
 // Try to connect with the MySQL Server
-$con = mysql_connect('ajax.cs.mercer.edu',"story",'melloyello1');
+$con = mysql_connect('ajax.cs.mercer.edu',"story",'***********');
 
 if (!$con){
   die('Could not connect to mySQL: ' . mysql_error());
