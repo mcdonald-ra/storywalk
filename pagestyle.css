@@ -1,0 +1,55 @@
+@media all and (max-width: 700px) {
+	#storywrapper{
+		width:100%;
+	}
+	#image1{
+		width:100%;
+	}
+	#storytext{
+		width:100%;
+	}
+}
+@media all and (min-width: 1025px) {
+	#storywrapper{
+		margin-top:115px;
+		position:relative;
+		max-width:100%;
+		height:auto;
+	}
+	#image1{
+		position:absolute;
+		top:15%;
+		left:5%;
+		width:40%;
+		max-height:90%;
+		overflow:hidden;
+	}
+	#storytext{
+		position:absolute;
+		top:10%;
+		left:55%;
+		width:40%;
+		height:80%;
+		overflow:auto;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

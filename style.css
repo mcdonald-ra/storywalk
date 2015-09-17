@@ -1,0 +1,384 @@
+/* jQuery Slider styles */
+
+ul.bjqs{position:relative;list-style:none;padding:0;margin:0;overflow:hidden;display:none;}
+li.bjqs-slide{position:absolute; display:none;}
+ul.bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
+ul.bjqs-controls.v-centered li a{position:absolute;}
+ul.bjqs-controls.v-centered li.bjqs-next a{right:0;}
+ul.bjqs-controls.v-centered li.bjqs-prev a{left:0;}
+ol.bjqs-markers{list-style: none; padding: 0; margin: 0; width:100%;}
+ol.bjqs-markers.h-centered{text-align: center;}
+ol.bjqs-markers li{display:inline;}
+ol.bjqs-markers li a{display:inline-block;}
+p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
+
+ul.bjqs-controls.v-centered li a{
+	display:block;
+	padding:10px;
+	background:#000;
+	color:#fff;
+	text-decoration: none;
+}
+
+ul.bjqs-controls.v-centered li a:hover{
+	background:#7f1f3a;
+	color:#fff;
+}
+
+ol.bjqs-markers li a{
+	padding:5px 10px;
+	background:#000;
+	color:#fff;
+	margin:5px;
+	text-decoration: none;
+}
+
+ol.bjqs-markers li.active-marker a,
+ol.bjqs-markers li a:hover{
+	background: #7f1f3a;
+}
+
+p.bjqs-caption{
+	background: rgba(127,31,58,0.5);
+	color:#fff;
+}
+
+/* End jQuery slider styles */
+
+a{
+	color:#7f1f3a;
+}
+
+label {
+    width: 200px;
+	display: inline-block;
+}
+
+ul{
+	list-style-type:none;
+}
+
+@font-face {
+  font-family: "Icon";
+  src: url(http://www.godbolt.me/fonts/modernpics-webfont.ttf) format('truetype'),
+  url(http://www.godbolt.me/fonts/modernpics-webfont.woff) format('woff'),
+  url(http://www.godbolt.me/fonts/modernpics-webfont.eot) format('embedded-opentype'),
+  url(http://www.godbolt.me/fonts/modernpics-webfont.svg) format('svg');
+}
+
+body{
+	font-family: Arial, san-serif;
+	height:100%;
+	padding:0;
+	margin:0;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+nav {
+  margin: 0;
+  z-index:100;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  z-index:100;
+}
+nav li {
+  position: relative;
+  list-style: none;
+  z-index:100;
+}
+
+/* Phone Screen */
+@media all and (max-width: 700px) {
+  nav li {
+    margin-bottom: 2px;
+  }
+}
+
+/* iPad Screen */
+@media all and (min-width: 701px) and (max-width:1024px){
+  nav li {
+    margin-bottom: 2px;
+  }
+}
+
+/* Full Screen */
+@media all and (min-width: 1025px) {
+  nav li {
+    float: left;
+    width: 20%;
+    text-align: center;
+	margin-bottom:10px;
+  }
+  nav li:last-child a {
+    border: none;
+  }
+  nav li:hover li {
+    height: 40px;
+  }
+}
+
+nav li a {
+  background: #000;
+  padding: 10px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background: #7f1f3a;
+}
+
+/* Full Screen */
+@media all and (min-width: 1025px) {
+  nav li a {
+    border-right: 1px solid #555;
+  }
+}
+
+nav li a.more, nav li a.less {
+  display: none;
+  font-family: icon;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #000;
+  padding: 0;
+  width: 25%;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  font-size: 30px;
+  -moz-box-shadow: -3px 0px 2px -2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -3px 0px 2px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: -3px 0px 2px -2px rgba(0, 0, 0, 0.1);
+}
+.touch nav li a.more, .touch nav li a.less {
+  display: block;
+}
+
+/* Phone Screen */
+@media all and (max-width: 700px) {
+  nav li a.more, nav li a.less {
+    display: block;
+  }
+}
+
+@media all and (min-width: 701px) and (max-width:1024px){
+  nav li a.more, nav li a.less {
+    display: block;
+  }
+}
+
+nav li a.more:hover, nav li a.less:hover {
+  background: #7f1f3a;
+}
+
+nav li ul {
+  padding: 0;
+}
+
+/* Full Screen */
+@media all and (min-width: 1025px) {
+  nav li ul {
+    width: 100%;
+    position: absolute;
+  }
+}
+
+nav li ul li {
+  height: 0px;
+  -moz-transition-property: height;
+  -o-transition-property: height;
+  -webkit-transition-property: height;
+  transition-property: height;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+/* Full Screen */
+@media all and (min-width: 1025px) {
+  nav li ul li {
+    width: auto;
+    float: none;
+    border: none;
+    margin-left: -1px;
+  }
+}
+
+nav li ul a {
+  background: #000;
+  line-height: 21px;
+  border: none;
+}
+
+/* Phone Screen */
+@media all and (max-width: 700px) {
+  nav li ul a {
+    padding-left: 20px;
+  }
+}
+
+nav li ul a:hover {
+  background: #7f1f3a;
+}
+
+nav li:target ul li {
+  height: 40px;
+}
+
+/* Phone Screen */
+@media all and (max-width: 700px) {
+  nav li:target ul li {
+    border-top: 1px solid #c8c8c8;
+  }
+}
+
+nav li:target ul li:first-child {
+  border-top: none;
+}
+
+nav li:target .less {
+  z-index: 1000;
+}
+
+#navdiv{
+  background:#FFFFFF;
+}
+
+#wrapper{
+  width:100%;
+  margin-top:10px;
+}
+
+img#heading{
+  max-width:100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#image1,#image2{
+	max-width:100%;
+	height:auto;
+	padding:10px;
+}
+
+#container{
+  max-width:620px;
+  margin:0 auto;
+  z-index:-100;
+  padding-bottom:50px;
+}
+
+@media all and (max-width: 700px) {
+  #maindiv{
+	width:100%;
+	display:block;
+	padding:5px;
+	background:#FFFFFF;
+  }
+  #img2{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+  }
+  #storytitle{
+	font-size:1.5em;
+  }
+  .staffpic{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:90%;
+  }
+  .staffchat{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:85%;
+  }
+  #clearit{
+	clear:both;
+  }
+  #user{
+	font-size:75%;
+	display:none;
+  }
+  #indexuser{
+	visibility:visible;
+  }
+}
+@media all and (min-width: 1025px) {
+  #maindiv{
+	padding:5px;
+	width:60%;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	background:#FFFFFF;
+  }
+  #story{
+    padding-top:5%;
+	background-image:url(openbook.png);
+	background-size:100%;
+	background-repeat:no-repeat;
+  }
+  .staffpic{
+	float:left;
+	max-width:29%;
+  }
+  .staffchat{
+	float:left;
+	margin-left:2%;
+	max-width:69%;
+  }
+  #clearit{
+	clear:both;
+	max-height:115px;
+  }
+  #user{
+	font-size:75%;
+  }
+  #indexuser{
+	display:none;
+  }
+}
+
+.spanner{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
